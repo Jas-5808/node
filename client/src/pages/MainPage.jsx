@@ -9,26 +9,6 @@ import 'swiper/css/pagination';
 
 export function MainPage(){
     const { t } = useTranslation();
-    const [phone, setPhone] = useState("");
-
-    const handleInputChange = (e) => {
-      let value = e.target.value.replace(/\D/g, ""); 
-  
-      if (value.length > 0 && !value.startsWith("998")) {
-        value = "998" + value;
-      }
-  
-      if (value.length > 12) value = value.slice(0, 12);
-  
-      let formatted = "";
-      if (value.length > 0) formatted = `+998 `;
-      if (value.length > 3) formatted += `(${value.slice(3, 5)}`;
-      if (value.length > 5) formatted += `) ${value.slice(5, 8)}`;
-      if (value.length > 8) formatted += `-${value.slice(8, 10)}`;
-      if (value.length > 10) formatted += `-${value.slice(10, 12)}`;
-  
-      setPhone(formatted);
-    };
 
     const services = [
         { title: t('Лечение зубов'), desc: t('Качественное и безболезненное решение для здоровья полости рта') },
@@ -92,13 +72,13 @@ export function MainPage(){
                         <div className={cn.bg_color2}></div>
                         <div className={cn.section_title}>
                             <div className={cn.section_text}>
-                                <h3>{t('Стоматологическая')}</h3>
-                                <h1>{t('КЛИНИКА')}</h1>
+                                <h1>{t('Стоматологическая')}</h1>
+                                <h3>{t('КЛИНИКА')} 24/7</h3>
                                 <p>{t('Полный спектр стоматологических услуг: профилактика, лечение, имплантация. Современные технологии и индивидуальный подход.')}</p>
                             </div>
                             <div className={cn.section_link}>
-                                <a><img src="./icons/tell.png" alt="" />94 656-85-82</a>
-                                <a><img src="./icons/location.png" alt="" />{t('Яккасаройский, ул. Бобура, 87Б/1')}</a>
+                                <span><img src="./icons/tell.png" alt="" /><button><a href="">Позвонить</a></button></span>
+                                <span><img src="./icons/location.png" alt="" /><button><a href="">Где мы находимся</a></button></span>
                             </div>
                             
                         </div>
@@ -210,8 +190,6 @@ export function MainPage(){
                                     <input type="text" placeholder={t('Ваше имя')} required/>
                                     <input 
                                     type="tel"
-                                    value={phone}
-                                    onChange={handleInputChange}
                                     placeholder="+998 (__) ___-__-__"
                                     required
                                     />
@@ -275,7 +253,7 @@ export function MainPage(){
                 </div>
 
                 <div id="location" class={cn.filials__map}>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.005121775583!2d69.3774787!3d41.3522424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef5adc6d7da57%3A0x19b2409d0f8fadd1!2sM-Clinic!5e0!3m2!1sru!2s!4v1742482416453!5m2!1sru!2s"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.855457497325!2d69.2813006!3d41.377224999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8bee3975b20d%3A0xc163529244cbdca0!2z0KHRgtC-0LzQsNGC0L7Qu9C-0LPQuNGPIDI0INGH0LDRgdCwIC0g0LvQtdGH0LXQvdC40LUg0Lgg0YPQtNCw0LvQtdC90LjQtSDQt9GD0LHQvtCyINC70Y7QsdC-0Lkg0YHQu9C-0LbQvdC-0YHRgtC4!5e0!3m2!1sru!2s!4v1742735757994!5m2!1sru!2s"></iframe>
                 </div>
 
                 <div id="contacts" className={cn.contact}>
