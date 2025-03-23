@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   db:
     image: postgres:15
@@ -25,6 +24,8 @@ services:
       - DB_NAME=click_counter
       - DB_PASSWORD=password
       - DB_PORT=5432
+      - USER_ID=${USER_ID}
+      - CALL_ADMIN_ID=${CALL_ADMIN_ID}
     depends_on:
       - db
     volumes:

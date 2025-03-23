@@ -1,0 +1,48 @@
+{
+    "Главная": "Asosiy",
+    "Услуги": "Xizmatlar",
+    "О нас": "Biz haqimizda",
+    "Контакты": "Kontaktlar",
+    "Локация": "Manzil",
+    "Оставить заявку": "Ariza qoldirish",
+    
+    "Стоматологическая": "Stomatologik",
+    "КЛИНИКА": "KLINIKA",
+    "Полный спектр стоматологических услуг: профилактика, лечение, имплантация. Современные технологии и индивидуальный подход.": 
+    "Stomatologik xizmatlarning to‘liq spektri: profilaktika, davolash, implantatsiya. Zamonaviy texnologiyalar va individual yondashuv.",
+    "Яккасаройский, ул. Бобура, 87Б/1": "Yakkasaroy tumani, Bobur ko‘chasi, 87B/1",
+    
+    "лет успешной работы": "yillik muvaffaqiyatli ish",
+    "довольных пациентов": "mamnun bemorlar",
+    "Опытных специалистов": "Tajribali mutaxassislar",
+    "видов услуг": "xizmat turlari",
+    
+    "Наши услуги": "Bizning xizmatlarimiz",
+    "Лечение зубов": "Tishlarni davolash",
+    "Качественное и безболезненное решение для здоровья полости рта": 
+    "Og‘iz bo‘shlig‘ining sog‘lig‘i uchun sifatli va og‘riqsiz yechim",
+    "ЗАПИСАТЬСЯ": "RO'YXATDAN O'TISH",
+    
+    "О нашей клинике": "Bizning klinikamiz haqida",
+    "Наша клиника предлагает полный уход за зубами и деснами: от профилактики до сложных процедур. Мы используем передовое оборудование и методики для качественного и комфортного обслуживания. Опытная команда стоматологов и техников гарантирует здоровую и красивую улыбку каждому пациенту.": 
+    "Bizning klinika tish va milklar uchun to‘liq parvarish qiladi: profilaktikadan tortib murakkab muolajalargacha. Biz sifatli va qulay xizmat ko‘rsatish uchun ilg‘or uskunalar va metodlardan foydalanamiz. Tajribali stomatolog va texniklar jamoasi har bir bemorga sog‘lom va chiroyli tabassum kafolatlaydi.",
+    
+    "Подробнее": "Batafsil",
+    
+    "Заявка": "Ariza",
+    "Отправить": "Yuborish",
+    "Запишитесь сейчас": "Hozir ro‘yxatdan o‘ting",
+    
+    "Ваше имя": "Ismingiz",
+    "Ваш телефон": "Telefoningiz",
+    
+    "Звонить по номеру": "Quyidagi raqamga qo‘ng‘iroq qiling",
+    "Электронная почта": "Elektron pochta",
+    
+    "Время работы": "Ish vaqti",
+    "Пн. – Вс": "Dushanba – Yakshanba",
+    "с 9:00 до 18:00": "9:00 dan 18:00 gacha",
+    
+    "Наш адрес:": "Manzilimiz:",
+    "г. Ташкент, Яккасаройский р-н, ул. Бобура, 87Б/1": "Toshkent sh., Yakkasaroy tumani, Bobur ko‘chasi, 87B/1"
+}
