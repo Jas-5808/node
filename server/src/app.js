@@ -1,9 +1,5 @@
 const express = require('express');
-<<<<<<< Updated upstream
 const path = require('path');
-=======
-const path = require('path'); 
->>>>>>> Stashed changes
 const cors = require('cors');
 const { initDb } = require('./services/dbService');
 const clickRoutes = require('./routes/clickRoutes');
@@ -23,12 +19,9 @@ app.use(cors({
 
 app.use(express.json());
 
-<<<<<<< Updated upstream
-// Раздача статических файлов из папки dist
+
 app.use(express.static(path.join(__dirname, '../../dist')));
-=======
-app.use(express.static(path.join(__dirname, '../../client/build')));
->>>>>>> Stashed changes
+
 
 app.use('/api/click', clickRoutes);
 app.use('/api/call', callRoutes);

@@ -8,12 +8,8 @@ RUN npm install
 
 # Копируем исходный код бэкенда и папку dist
 COPY src ./src
-<<<<<<< Updated upstream
 COPY dist ./dist
 COPY . .
-=======
-
->>>>>>> Stashed changes
 
 EXPOSE 3000
 
