@@ -1,13 +1,7 @@
 const { Pool } = require('pg');
-require('dotenv').config();
+const { dbConfig } = require('../utils/config');
 
-const pool = new Pool({
-    user: process.env.DB_USER || 'user',
-    host: process.env.DB_HOST || 'localhost',
-    database: process.env.DB_NAME || 'click_counter',
-    password: process.env.DB_PASSWORD || 'password',
-    port: process.env.DB_PORT || 5432,
-});
+const pool = new Pool(dbConfig);
 
 const initDb = async () => {
     const maxAttempts = 10;
@@ -29,7 +23,6 @@ const initDb = async () => {
                     requested_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 );
             `);
-            // Удаляем ограничение UNIQUE, если оно было создано ранее
             await pool.query(`
                 DO $$
                 BEGIN
@@ -43,6 +36,7 @@ const initDb = async () => {
                 END
                 $$;
             `);
+            console.log('База данных инициализирована');
             return;
         } catch (err) {
             attempts++;
@@ -56,4 +50,45 @@ const initDb = async () => {
     }
 };
 
-module.exports = { pool, initDb };
+// Методы для работы с кликами
+const addClick = async (link) => {
+    await pool.query('INSERT INTO clicks (link) VALUES ($1)', [link]);
+};
+
+const getStats = async (period) => {
+    let timeFilter = '';
+    switch (period) {
+        case 'hour':
+            timeFilter = 'WHERE clicked_at > NOW() - INTERVAL \'1 hour\'';
+            break;
+        case 'day':
+            timeFilter = 'WHERE clicked_at > NOW() - INTERVAL \'1 day\'';
+            break;
+        case 'week':
+            timeFilter = 'WHERE clicked_at > NOW() - INTERVAL \'1 week\'';
+            break;
+        case 'month':
+            timeFilter = 'WHERE clicked_at > NOW() - INTERVAL \'1 month\'';
+            break;
+        case 'all':
+        default:
+            timeFilter = '';
+    }
+
+    const result = await pool.query(`
+        SELECT link, COUNT(*) AS period_count,
+               (SELECT COUNT(*) FROM clicks WHERE link = c.link) AS total_count
+        FROM clicks c
+        ${timeFilter}
+        GROUP BY link
+        ORDER BY total_count DESC
+    `);
+    return result.rows;
+};
+
+// Методы для работы с запросами на звонки
+const addCallRequest = async (name, phone) => {
+    await pool.query('INSERT INTO call_requests (name, phone) VALUES ($1, $2)', [name, phone]);
+};
+
+module.exports = { initDb, addClick, getStats, addCallRequest };
