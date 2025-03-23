@@ -1,31 +1,34 @@
 const express = require('express');
-const { addClick } = require('../services/dbService');
+const { body, validationResult } = require('express-validator');
+const { addClick, getTotalClicks } = require('../services/dbService');
 const bot = require('../bot/bot');
 const { statsAdminId } = require('../utils/config');
+const logger = require('../utils/logger');
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
-    const { link, userId } = req.body;
+router.post(
+    '/',
+    [
+        body('link').notEmpty().withMessage('Поле link обязательно'),
+    ],
+    async (req, res, next) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            logger.warn('Ошибка валидации в /api/click', { errors: errors.array() });
+            return res.status(400).json({ errors: errors.array() });
+        }
+        const {link} = req.body;
 
-    if (!link || !userId) {
-        return res.status(400).json({ error: 'Не указаны link или userId' });
+        try {
+            await addClick(link);
+            const totalCount = await getTotalClicks(link);
+            logger.info(`Клик обработан: link=${link}, totalCount=${totalCount}`);
+            res.json({ success: true, data: { link, total_count: totalCount } });
+        } catch (err) {
+            next(err);
+        }
     }
-
-    try {
-        await addClick(link);
-        const totalClicks = await pool.query(
-            'SELECT COUNT(*) AS total FROM clicks WHERE link = $1',
-            [link]
-        );
-        const totalCount = totalClicks.rows[0].total;
-
-        await bot.telegram.sendMessage(statsAdminId, `Клик по ссылке "${link}": всего ${totalCount} раз`);
-        res.json({ success: true, data: { link, total_count: totalCount } });
-    } catch (err) {
-        console.error('Ошибка при обработке клика:', err);
-        res.status(500).json({ error: 'Ошибка сервера' });
-    }
-});
+);
 
 module.exports = router;

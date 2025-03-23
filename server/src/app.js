@@ -2,6 +2,7 @@ const express = require('express');
 const { initDb } = require('./services/dbService');
 const clickRoutes = require('./routes/clickRoutes');
 const callRoutes = require('./routes/callRoutes');
+const errorHandler = require('./middleware/errorHandler');
 const { port } = require('./utils/config');
 require('./bot/bot'); // Инициализация бота
 
@@ -16,6 +17,9 @@ app.use(express.json());
     // Маршруты
     app.use('/api/click', clickRoutes);
     app.use('/api/call', callRoutes);
+
+    // Обработка ошибок
+    app.use(errorHandler);
 
     // Запуск сервера
     app.listen(port, () => {

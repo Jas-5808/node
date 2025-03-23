@@ -1,5 +1,6 @@
 const { Pool } = require('pg');
 const { dbConfig } = require('../utils/config');
+const logger = require('../utils/logger');
 
 const pool = new Pool(dbConfig);
 
@@ -36,15 +37,15 @@ const initDb = async () => {
                 END
                 $$;
             `);
-            console.log('База данных инициализирована');
+            logger.info('База данных инициализирована');
             return;
         } catch (err) {
             attempts++;
             if (attempts === maxAttempts) {
-                console.error('Не удалось подключиться к базе данных после всех попыток:', err);
+                logger.error('Не удалось подключиться к базе данных после всех попыток:', err);
                 process.exit(1);
             }
-            console.log('Ошибка подключения, повтор через 2 секунды:', err.message);
+            logger.warn('Ошибка подключения, повтор через 2 секунды:', err.message);
             await new Promise(resolve => setTimeout(resolve, 2000));
         }
     }
@@ -53,6 +54,11 @@ const initDb = async () => {
 // Методы для работы с кликами
 const addClick = async (link) => {
     await pool.query('INSERT INTO clicks (link) VALUES ($1)', [link]);
+};
+
+const getTotalClicks = async (link) => {
+    const result = await pool.query('SELECT COUNT(*) AS total FROM clicks WHERE link = $1', [link]);
+    return Number(result.rows[0].total);
 };
 
 const getStats = async (period) => {
@@ -91,4 +97,4 @@ const addCallRequest = async (name, phone) => {
     await pool.query('INSERT INTO call_requests (name, phone) VALUES ($1, $2)', [name, phone]);
 };
 
-module.exports = { initDb, addClick, getStats, addCallRequest };
+module.exports = { initDb, addClick, getStats, addCallRequest, getTotalClicks };
