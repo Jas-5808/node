@@ -46,7 +46,7 @@ const Header = () =>{
                                 >
                                     <span></span>
                                 </div>
-                                <img src="/icons/logo.svg" alt="logo" />
+                                <img src="/img/PNG.png" alt="logo" />
                                 <h2>Medical</h2>
                             </div>
                             <ul className={`${cn.list} ${isMenuOpen ? cn.active : ''}`}>

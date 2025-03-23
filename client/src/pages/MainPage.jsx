@@ -7,8 +7,16 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css'; 
 import 'swiper/css/pagination';
 
-export function MainPage(){
+export function MainPage() {
     const { t } = useTranslation();
+
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+    });
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null); // 'success' или 'error'
 
     const services = [
         { title: t('Лечение зубов'), desc: t('Качественное и безболезненное решение для здоровья полости рта') },
@@ -63,7 +71,50 @@ export function MainPage(){
         return stars;
     };
 
-    return(
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        try {
+            
+            const response = await fetch(`http://localhost:3000/api/call`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    phone: formData.phone,
+                }),
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Ошибка при отправке заявки');
+            }
+
+            const result = await response.json();
+            setSubmitStatus('success');
+            setFormData({ name: '', phone: '' });
+        } catch (error) {
+            console.error('Ошибка:', error);
+            setSubmitStatus('error');
+
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+    return (
         <>
             <div className={cn.section}>
                 <div className="container">
@@ -78,47 +129,20 @@ export function MainPage(){
                             </div>
                             <div className={cn.section_link}>
                                 <span><img src="./icons/tell.png" alt="" /><button><a href="">Позвонить</a></button></span>
-                                <span><img src="./icons/location.png" alt="" /><button><a href="">Где мы находимся</a></button></span>
+                                <span><img src="./icons/location.png" alt="" /><button><a href="https://goo.su/amJPUi">Где мы находимся</a></button></span>
                             </div>
-                            
                         </div>
                         <div className={cn.section_img}>
-                            <div className={cn.play}>
-                                <img src="./icons/play.svg" alt="play" />
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
 
-                <div className={cn.few_info}>
-                    <div className="container">
-                        <div className={cn.few_info_content}>
-                            <div className={cn.few_info_card}>
-                                <h3>15+</h3>
-                                <p>{t('лет успешной работы')}</p>
-                            </div>
-                            <div className={cn.few_info_card}>
-                                <h3>5K+</h3>
-                                <p>{t('довольных пациентов')}</p>
-                            </div>
-                            <div className={cn.few_info_card}>
-                                <h3>100%</h3>
-                                <p>{t('Опытных специалистов')}</p>
-                            </div>
-                            <div className={cn.few_info_card}>
-                                <h3>50+</h3>
-                                <p>{t('видов услуг')}</p>
-                            </div>
-                        </div>
-                        
-                    </div>
 
-                </div>
 
                 <div id="services" className="container">
                     <div className={cn.our_services}>
                         <h2>{t('Наши услуги')}</h2>
-
                         <div className={cn.services_cards}>
                             <Swiper
                                 modules={[Navigation, Pagination]}
@@ -169,12 +193,10 @@ export function MainPage(){
                             <div className={cn.aboutUs_img}>
                                 <div className={cn.about_img}><p>{t('О нас')}</p></div>
                             </div>
-
                             <div className={cn.aboutUs_title}>
                                 <div className={cn.line}></div>
                                 <h3>{t('О нашей клинике')}</h3>
-                                <p>{t('Наша клиника предлагает полный уход за зубами и деснами: от профилактики до сложных процедур. Мы используем передовое оборудование и методики для качественного и комфортного обслуживания. Опытная команда стоматологов и техников гарантирует здоровую и красивую улыбку каждому пациенту.')}</p>
-                                    
+                                <p>{t('это современный медицинский центр, где каждый пациент получает квалифицированную помощь без выходных. Мы предлагаем широкий спектр услуг, включая круглосуточный приём стоматолога. В любое время суток вы можете обратиться за консультацией, лечением или экстренной помощью – мы всегда готовы помочь.')}</p>
                                 <a href="#">{t('Подробнее')}<img src="./icons/arrow.png" alt="" /></a>
                             </div>
                         </div>
@@ -186,18 +208,34 @@ export function MainPage(){
                         <div className={cn.signUp_content}>
                             <div className={cn.signUp_title}>
                                 <h3>{t('Заявка')}</h3>
-                                <form action="">
-                                    <input type="text" placeholder={t('Ваше имя')} required/>
-                                    <input 
-                                    type="tel"
-                                    placeholder="+998 (__) ___-__-__"
-                                    required
+                                <form onSubmit={handleSubmit}>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder={t('Ваше имя')}
+                                        value={formData.name}
+                                        onChange={handleInputChange}
+                                        required
                                     />
-
-                                    <button>{t('Отправить')}</button>
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        placeholder="Телефон номер"
+                                        value={formData.phone}
+                                        onChange={handleInputChange}
+                                        required
+                                    />
+                                    <button type="submit" disabled={isSubmitting}>
+                                        {isSubmitting ? t('Отправка...') : t('Отправить')}
+                                    </button>
                                 </form>
+                                {submitStatus === 'success' && (
+                                    <p style={{ color: 'green' }}>{t('Заявка успешно отправлена!')}</p>
+                                )}
+                                {submitStatus === 'error' && (
+                                    <p style={{ color: 'red' }}>{t('Ошибка при отправке заявки.')}</p>
+                                )}
                             </div>
-                            
                             <div className={cn.signUp_img}>
                                 <div className={cn.bg_color4}></div>
                                 <div className={cn.s_img}>
@@ -205,8 +243,7 @@ export function MainPage(){
                                     <h3>{t('Запишитесь сейчас')}</h3>
                                 </div>
                             </div>
-
-                        </div> 
+                        </div>
                     </div>
                 </div>
 
@@ -252,7 +289,7 @@ export function MainPage(){
                     </div>
                 </div>
 
-                <div id="location" class={cn.filials__map}>
+                <div id="location" className={cn.filials__map}>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.855457497325!2d69.2813006!3d41.377224999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8bee3975b20d%3A0xc163529244cbdca0!2z0KHRgtC-0LzQsNGC0L7Qu9C-0LPQuNGPIDI0INGH0LDRgdCwIC0g0LvQtdGH0LXQvdC40LUg0Lgg0YPQtNCw0LvQtdC90LjQtSDQt9GD0LHQvtCyINC70Y7QsdC-0Lkg0YHQu9C-0LbQvdC-0YHRgtC4!5e0!3m2!1sru!2s!4v1742735757994!5m2!1sru!2s"></iframe>
                 </div>
 
@@ -280,5 +317,5 @@ export function MainPage(){
                 </div>
             </div>
         </>
-    )
+    );
 }

@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 const cors = require('cors');
 const { initDb } = require('./services/dbService');
 const clickRoutes = require('./routes/clickRoutes');
@@ -10,9 +11,8 @@ require('./bot/bot');
 
 const app = express();
 
-// Настройка CORS
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: process.env.FRONTEND_URL || '*',
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
 }));
@@ -20,16 +20,20 @@ app.use(cors({
 app.use(express.json());
 
 
-app.use(express.static(path.join(__dirname, '../../dist')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 
 app.use('/api/click', clickRoutes);
 app.use('/api/call', callRoutes);
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../dist', 'index.html'));
+    const indexPath = path.join(__dirname, '../dist', 'index.html');
+    if (fs.existsSync(indexPath)) {
+        res.sendFile(indexPath);
+    } else {
+        res.status(404).send('Frontend not found. Please build the frontend.');
+    }
 });
-
 
 (async () => {
     await initDb();

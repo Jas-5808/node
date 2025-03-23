@@ -9,7 +9,6 @@ RUN npm install
 # Копируем исходный код бэкенда и папку dist
 COPY src ./src
 COPY dist ./dist
-COPY . .
 
 EXPOSE 3000
 
