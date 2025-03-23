@@ -2,16 +2,13 @@ FROM node:18
 
 WORKDIR /app
 
+# Установка зависимостей для бэкенда
 COPY package*.json ./
 RUN npm install
 
+# Копируем исходный код бэкенда и папку dist
 COPY src ./src
-
-COPY client/package*.json ./client/
-RUN cd client && npm install
-COPY client ./client
-RUN cd client && npm run build
-
+COPY dist ./dist
 COPY . .
 
 EXPOSE 3000

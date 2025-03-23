@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require('path'); // Для работы с путями
+const path = require('path');
 const cors = require('cors');
 const { initDb } = require('./services/dbService');
 const clickRoutes = require('./routes/clickRoutes');
@@ -19,8 +19,8 @@ app.use(cors({
 
 app.use(express.json());
 
-// Раздача статических файлов React из папки client/build
-app.use(express.static(path.join(__dirname, '../../client/build')));
+// Раздача статических файлов из папки dist
+app.use(express.static(path.join(__dirname, '../../dist')));
 
 // Маршруты API
 app.use('/api/click', clickRoutes);
@@ -28,7 +28,7 @@ app.use('/api/call', callRoutes);
 
 // Все остальные запросы направляем на index.html (для поддержки SPA)
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../client/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../../dist', 'index.html'));
 });
 
 // Инициализация базы данных
