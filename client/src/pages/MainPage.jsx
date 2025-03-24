@@ -123,6 +123,7 @@ export function MainPage() {
                         <div className={cn.bg_color2}></div>
                         <div className={cn.section_title}>
                             <div className={cn.section_text}>
+
                                 <img src="./img/Dentalclinic.png" alt="logo" />
                                 <h1>{t('Стоматологическая')}</h1>
                                 <h3>{t('КЛИНИКА')} 24/7</h3>
@@ -131,6 +132,7 @@ export function MainPage() {
                             <div className={cn.section_link}>
                                 <span><img src="./icons/tell.png" alt="" /><button><a href="">Позвонить</a></button></span>
                                 <span><img src="./icons/location.png" alt="" /><button><a href="https://goo.su/amJPUi">Где мы находимся</a></button></span>
+
 
                             </div>
                         </div>
@@ -218,6 +220,7 @@ export function MainPage() {
                                         value={formData.name}
                                         onChange={handleInputChange}
                                         required
+
                                     />
                                     <input
                                         type="tel"
@@ -292,6 +295,7 @@ export function MainPage() {
                 </div>
 
                 <div id="location" className={cn.filials__map}>
+
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.855457497325!2d69.2813006!3d41.377224999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8bee3975b20d%3A0xc163529244cbdca0!2z0KHRgtC-0LzQsNGC0L7Qu9C-0LPQuNGPIDI0INGH0LDRgdCwIC0g0LvQtdGH0LXQvdC40LUg0Lgg0YPQtNCw0LvQtdC90LjQtSDQt9GD0LHQvtCyINC70Y7QsdC-0Lkg0YHQu9C-0LbQvdC-0YHRgtC4!5e0!3m2!1sru!2s!4v1742735757994!5m2!1sru!2s"></iframe>
                 </div>
 

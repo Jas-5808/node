@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const fs = require('fs');
+const fs = require('fs'); 
 const cors = require('cors');
 const { initDb } = require('./services/dbService');
 const clickRoutes = require('./routes/clickRoutes');
@@ -13,12 +13,12 @@ const app = express();
 
 app.use(cors({
     origin: process.env.FRONTEND_URL || '*',
+
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
 }));
 
 app.use(express.json());
-
 app.use(express.static(path.join(__dirname, '../dist')));
 
 app.use('/api/click', clickRoutes);
