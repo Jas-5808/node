@@ -46,8 +46,8 @@ const Header = () =>{
                                 >
                                     <span></span>
                                 </div>
-                                <img src="/img/PNG.png" alt="logo" />
-                                <h2>Medical</h2>
+                                <img src="./img/Dentalclinic.png" alt="logo" />
+                            
                             </div>
                             <ul className={`${cn.list} ${isMenuOpen ? cn.active : ''}`}>
                                 <li><a href="#home" onClick={(e) => handleScroll(e, "home")}>{t('Главная')}</a></li>

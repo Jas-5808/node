@@ -15,13 +15,13 @@
         }
     
         .bg_color {
-            background: #b3e5fc;
+            background: #22b5c9;
             top: -800px;
             right: -200px;
         }
-    
+    // ...........................................................................................................................................................................................................
         .bg_color2 {
-            background: linear-gradient(142.43deg, #c8e6c9 15.839%, #4f8cfb 85.861%);
+            background: linear-gradient(142.43deg, #9cc1da 15.839%, #4f8cfb 85.861%);
             opacity: 0.75;
             top: -300px;
             right: -500px;
@@ -36,6 +36,10 @@
             .section_text {
                 display: flex;
                 flex-direction: column;
+
+                img{
+                    display: none;
+                }
     
                 h3 {
                     font-size: 45px;
@@ -78,13 +82,14 @@
                     }
 
                     button{
+                        width: 150px;
+                        background: #1a2343;
+                        padding: 10px 20px;
+                        border-radius: 20px;
 
                         a{
                             width: 100%;
-                            background: var(--blue);
                             color: var(--white);
-                            padding: 10px 20px;
-                            border-radius: 20px;
                         }
                     }
                 }
@@ -99,7 +104,7 @@
             background: rgb(66, 66, 66);
             overflow: hidden;
             position: relative;
-            background: url("./img/doctor.png") no-repeat 0% 30% / cover;
+            background: url("./img/hm.png") no-repeat 20% 15% / 100% 120%;
     
             .play {
                 position: absolute;
@@ -144,6 +149,7 @@
                 padding-top: 30px;
     
                 .section_text {
+
                     h3 {
                         font-size: 36px;
                         margin-bottom: 20px;
@@ -221,6 +227,11 @@
                     flex-direction: column;
                     align-items: center;
                     
+                    img{
+                        display: block;
+                        width: 200px;
+                        margin-bottom: 20px;
+                    }
 
                     h3 {
                         font-size: 28px;
@@ -283,6 +294,10 @@
                 gap: 20px;
     
                 .section_text {
+                    img{
+                        width: 130px;
+                        margin-bottom: 0;
+                    }
                     h3 {
                         font-size: 24px;
                     }

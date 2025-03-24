@@ -27,16 +27,11 @@
 {"level":"warn","message":"Ошибка подключения, повтор через 2 секунды:","timestamp":"2025-03-23T13:54:11.978Z"}
 {"level":"info","message":"База данных инициализирована","timestamp":"2025-03-23T13:54:14.028Z"}
 {"level":"info","message":"База данных инициализирована","timestamp":"2025-03-23T14:11:54.070Z"}
-{"level":"info","message":"База данных инициализирована","timestamp":"2025-03-23T14:43:55.344Z"}
-{"level":"info","message":"База данных инициализирована","timestamp":"2025-03-23T14:50:48.789Z"}
-{"level":"info","message":"База данных инициализирована","timestamp":"2025-03-23T15:19:06.921Z"}
-{"level":"info","message":"Запрос на звонок обработан: name=жасур, phone=+998935446065","timestamp":"2025-03-23T15:30:03.426Z"}
-{"level":"info","message":"Запрос на звонок обработан: name=jasur, phone=+9935446065","timestamp":"2025-03-23T15:35:50.571Z"}
-{"level":"info","message":"Клик обработан: link=telegram, totalCount=1","timestamp":"2025-03-23T15:38:20.282Z"}
-{"level":"info","message":"Клик обработан: link=telegram, totalCount=2","timestamp":"2025-03-23T15:38:47.666Z"}
-{"level":"info","message":"Клик обработан: link=instagram, totalCount=1","timestamp":"2025-03-23T15:44:10.761Z"}
-{"level":"info","message":"База данных инициализирована","timestamp":"2025-03-23T15:48:41.827Z"}
-{"level":"info","message":"Запрос на звонок обработан: name=jasur, phone=+998935446065","timestamp":"2025-03-23T15:50:17.119Z"}
-{"level":"info","message":"Клик обработан: link=facebook, totalCount=1","timestamp":"2025-03-23T15:51:04.956Z"}
-{"level":"info","message":"Клик обработан: link=instagram, totalCount=2","timestamp":"2025-03-23T16:24:15.352Z"}
-{"level":"info","message":"Запрос на звонок обработан: name=qwerty, phone=1234576","timestamp":"2025-03-23T16:28:48.756Z"}
+
+{"level":"warn","message":"Ошибка подключения, повтор через 2 секунды:","timestamp":"2025-03-24T17:10:20.771Z"}
+{"level":"info","message":"База данных инициализирована","timestamp":"2025-03-24T17:10:22.820Z"}
+{"level":"info","message":"База данных инициализирована","timestamp":"2025-03-24T17:10:47.244Z"}
+{"level":"info","message":"Запрос на звонок обработан: name=jsss, phone=+71435678","timestamp":"2025-03-24T17:11:01.860Z"}
+{"level":"info","message":"Клик обработан: link=instagram, totalCount=3","timestamp":"2025-03-24T17:11:08.051Z"}
+{"level":"info","message":"База данных инициализирована","timestamp":"2025-03-24T17:12:46.190Z"}
+{"level":"info","message":"Клик обработан: link=facebook, totalCount=2","timestamp":"2025-03-24T17:13:46.585Z"}

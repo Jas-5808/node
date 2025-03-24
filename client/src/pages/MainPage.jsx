@@ -9,7 +9,6 @@ import 'swiper/css/pagination';
 
 export function MainPage() {
     const { t } = useTranslation();
-
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
@@ -17,6 +16,7 @@ export function MainPage() {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState(null); // 'success' или 'error'
+
 
     const services = [
         { title: t('Лечение зубов'), desc: t('Качественное и безболезненное решение для здоровья полости рта') },
@@ -34,25 +34,25 @@ export function MainPage() {
             name: "Dinara Yusubboeva",
             text: t("Очень понравилось, врачи компетентные и внимательные, работают быстро и профессионально. Спасибо за советы!"),
             rating: 5,
-            photo: "./img/user2.jpg", 
+            photo: "./img/user.jpg", 
         },
         {
             name: "Мухиддит Рихсибоев",
             text: t("Очень хорошая стомоталогия Квалифицированные врачи😊 Остальным тоже могу порекомендовать😎"),
             rating: 5,
-            photo: "./img/user3.jpg",
+            photo: "./img/user.jpg",
         },
         {
             name: "Мадина Юсупова",
             text: t("Приятные цены и высокий уровень обслуживания. Рекомендую всем!"),
             rating: 5,
-            photo: "./img/user1.jpg",
+            photo: "./img/user.jpg",
         },
         {
             name: "Максим Волков",
             text: t("Очень довольна результатом имплантации. Уютная атмосфера и внимательный персонал."),
             rating: 4,
-            photo: "./img/user4.jpg",
+            photo: "./img/user.jpg",
         },
     ];
 
@@ -123,6 +123,7 @@ export function MainPage() {
                         <div className={cn.bg_color2}></div>
                         <div className={cn.section_title}>
                             <div className={cn.section_text}>
+                                <img src="./img/Dentalclinic.png" alt="logo" />
                                 <h1>{t('Стоматологическая')}</h1>
                                 <h3>{t('КЛИНИКА')} 24/7</h3>
                                 <p>{t('Полный спектр стоматологических услуг: профилактика, лечение, имплантация. Современные технологии и индивидуальный подход.')}</p>
@@ -130,6 +131,7 @@ export function MainPage() {
                             <div className={cn.section_link}>
                                 <span><img src="./icons/tell.png" alt="" /><button><a href="">Позвонить</a></button></span>
                                 <span><img src="./icons/location.png" alt="" /><button><a href="https://goo.su/amJPUi">Где мы находимся</a></button></span>
+
                             </div>
                         </div>
                         <div className={cn.section_img}>
@@ -220,7 +222,7 @@ export function MainPage() {
                                     <input
                                         type="tel"
                                         name="phone"
-                                        placeholder="Телефон номер"
+                                        placeholder={t("Телефон номер")}
                                         value={formData.phone}
                                         onChange={handleInputChange}
                                         required
