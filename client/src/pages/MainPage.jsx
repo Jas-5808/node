@@ -6,6 +6,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'; 
 import 'swiper/css'; 
 import 'swiper/css/pagination';
+import hmImage from '../../public/img/hm.png';
+import aboutImg from '../../public/img/clinic.png';
+
 
 
 export function MainPage() {
@@ -21,13 +24,13 @@ export function MainPage() {
 
     const services = [
         { title: t('Лечение зубов'), desc: t('Качественное и безболезненное решение для здоровья полости рта'), img: "./icons/oral-health.png" },
-        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья', img: "./icons/oral-health.png" },
-        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта', img: "./icons/oral-health.png" },
-        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта', img: "./icons/oral-health.png" },
-        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта', img: "./icons/oral-health.png" },
-        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта', img: "./icons/oral-health.png" },
-        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта', img: "./icons/oral-health.png" },
-        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта', img: "./icons/oral-health.png" },
+        { title: t('Имплантация зубов'), desc: t('Восстановите улыбку с помощью современных технологий'), img: "./icons/teeth.png" },
+        { title: t('Виниры'), desc: t('Виниры – это эффективное решение для красивой и ровной улыбки.'), img: "./icons/dental-veneer.png" },
+        { title: t('Реставрация зубов'), desc: t('Возвращение красоты и функциональности улыбки'), img: "./icons/teeth-restoration.png" },
+        { title: t('Детская стоматология'), desc: t('Лечение зубов ребенка с самого раннего возраста'), img: "./icons/baby-teeth.png" },
+        { title: t('Отбеливание зубов'), desc: t('Процедура улучшения цвета зубов и устранения изменений цвета'), img: "./icons/tooth-whitening.png" },
+        { title: t('Коронки'), desc: t('Восстановления поврежденных зубов и улучшения их внешнего вида.'), img: "./icons/dental-crown.png" },
+        { title: t('Ортодонтия'), desc: t('Восстановление зубов, придание им естественного вида и прочности.'), img: "./icons/braces.png" },
     ];
 
     const reviewsData = [
@@ -160,7 +163,7 @@ export function MainPage() {
                                 </span>
                             </div>
                         </div>
-                        <div className={cn.section_img}></div>
+                        <div className={cn.section_img} style={{ backgroundImage: `url(${hmImage})` }}></div>
                     </div>
                 </div>
 
@@ -196,7 +199,7 @@ export function MainPage() {
                                 {services.map((service, index) => (
                                     <div key={index} className={cn.services_card}>
                                         <div className={cn.ser_card_text}>
-                                            <img src="./icons/dental-care.png" alt={service.title} />
+                                            <img src={service.img} alt={service.title} />
                                             <h3>{service.title}</h3>
                                             <div className={cn.line}></div>
                                             <p>{service.desc}</p>
@@ -215,7 +218,7 @@ export function MainPage() {
                         <div className={cn.dots}><img src="./icons/Dots.png" alt="" /></div>
                         <div className={cn.abuotUs_content}>
                             <div className={cn.aboutUs_img}>
-                                <div className={cn.about_img}><p>{t('О нас')}</p></div>
+                                <div className={cn.about_img} style={{ backgroundImage: `url(${aboutImg})` }}><p>{t('О нас')}</p></div>
                             </div>
                             <div className={cn.aboutUs_title}>
                                 <div className={cn.line}></div>
