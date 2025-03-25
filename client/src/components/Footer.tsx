@@ -41,7 +41,7 @@ const Footer = () => {
                         <ul>
                             <li>
                                 <a
-                                    href="https://instagram.com"
+                                    href="https://www.instagram.com/olllayor?igsh=MWcxYjZ2OWw3dm1zcg=="
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     onClick={() => handleSocialClick('instagram')}

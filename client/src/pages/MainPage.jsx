@@ -7,6 +7,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css'; 
 import 'swiper/css/pagination';
 
+
 export function MainPage() {
     const { t } = useTranslation();
     const [formData, setFormData] = useState({
@@ -15,24 +16,24 @@ export function MainPage() {
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState(null); // 'success' или 'error'
+    const [submitStatus, setSubmitStatus] = useState(null); 
 
 
     const services = [
-        { title: t('Лечение зубов'), desc: t('Качественное и безболезненное решение для здоровья полости рта') },
-        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья' },
-        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта' },
-        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта' },
-        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта' },
-        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта' },
-        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта' },
-        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта' },
+        { title: t('Лечение зубов'), desc: t('Качественное и безболезненное решение для здоровья полости рта'), img: "./icons/oral-health.png" },
+        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья', img: "./icons/oral-health.png" },
+        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта', img: "./icons/oral-health.png" },
+        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта', img: "./icons/oral-health.png" },
+        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта', img: "./icons/oral-health.png" },
+        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта', img: "./icons/oral-health.png" },
+        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта', img: "./icons/oral-health.png" },
+        { title: 'Лечение зубов', desc: 'Качественное и безболезненное решение для здоровья полости рта', img: "./icons/oral-health.png" },
     ];
 
     const reviewsData = [
         {
             name: "Dinara Yusubboeva",
-            text: t("Очень понравилось, врачи компетентные и внимательные, работают быстро и профессионально. Спасибо за советы!"),
+            text: t("Menga juda yoqdi, shifokorlar malakali va ehtiyotkor, tez va professional ishlaydilar. Maslahat uchun rahmat!"),
             rating: 5,
             photo: "./img/user.jpg", 
         },
@@ -44,7 +45,7 @@ export function MainPage() {
         },
         {
             name: "Мадина Юсупова",
-            text: t("Приятные цены и высокий уровень обслуживания. Рекомендую всем!"),
+            text: t("Ajoyib narxlar va yuqori darajadagi xizmat. Men hammaga tavsiya qilaman!"),
             rating: 5,
             photo: "./img/user.jpg",
         },
@@ -113,7 +114,21 @@ export function MainPage() {
             setIsSubmitting(false);
         }
     };
-
+    const handleCallAndScroll = (e, id) => {
+        e.preventDefault();
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+        window.location.href = "tel:+998946568582"; 
+    };
+    const handleScroll = (e, id) => {
+        e.preventDefault();
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
     return (
         <>
             <div className={cn.section}>
@@ -123,26 +138,31 @@ export function MainPage() {
                         <div className={cn.bg_color2}></div>
                         <div className={cn.section_title}>
                             <div className={cn.section_text}>
-
                                 <img src="./img/Dentalclinic.png" alt="logo" />
                                 <h1>{t('Стоматологическая')}</h1>
                                 <h3>{t('КЛИНИКА')} 24/7</h3>
                                 <p>{t('Полный спектр стоматологических услуг: профилактика, лечение, имплантация. Современные технологии и индивидуальный подход.')}</p>
                             </div>
                             <div className={cn.section_link}>
-                                <span><img src="./icons/tell.png" alt="" /><button><a href="">Позвонить</a></button></span>
-                                <span><img src="./icons/location.png" alt="" /><button><a href="https://goo.su/amJPUi">Где мы находимся</a></button></span>
-
-
+                                <span>
+                                    <img src="./icons/tell.png" alt="" />
+                                    <button>
+                                        <a href="#" onClick={(e) => handleCallAndScroll(e, "contacts")}>
+                                            {t('Звонить по номеру')}
+                                        </a>
+                                    </button>
+                                </span>
+                                <span>
+                                    <img src="./icons/location.png" alt="" />
+                                    <button>
+                                        <a href="https://goo.su/amJPUi">{t('Где мы находимся')}</a>
+                                    </button>
+                                </span>
                             </div>
                         </div>
-                        <div className={cn.section_img}>
-                            
-                        </div>
+                        <div className={cn.section_img}></div>
                     </div>
                 </div>
-
-
 
                 <div id="services" className="container">
                     <div className={cn.our_services}>
@@ -161,12 +181,12 @@ export function MainPage() {
                                     <SwiperSlide key={index} className={cn.swiper_slide}>
                                         <div className={cn.services_card}>
                                             <div className={cn.ser_card_text}>
-                                                <img src="./icons/dental-care.png" alt={service.title} />
+                                                <img src={service.img} alt={service.title} />
                                                 <h3>{service.title}</h3>
                                                 <div className={cn.line}></div>
                                                 <p>{service.desc}</p>
                                             </div>
-                                            <a href="#">{t('ЗАПИСАТЬСЯ')}</a>
+                                            <a href="#" onClick={(e) => handleScroll(e, "bids")}>{t('ЗАПИСАТЬСЯ')}</a>
                                         </div>
                                     </SwiperSlide>
                                 ))}
@@ -181,7 +201,7 @@ export function MainPage() {
                                             <div className={cn.line}></div>
                                             <p>{service.desc}</p>
                                         </div>
-                                        <a href="#">{t('ЗАПИСАТЬСЯ')}</a>
+                                        <a href="#" onClick={(e) => handleScroll(e, "bids")}>{t('ЗАПИСАТЬСЯ')}</a>
                                     </div>
                                 ))}
                             </div>
@@ -201,7 +221,7 @@ export function MainPage() {
                                 <div className={cn.line}></div>
                                 <h3>{t('О нашей клинике')}</h3>
                                 <p>{t('это современный медицинский центр, где каждый пациент получает квалифицированную помощь без выходных. Мы предлагаем широкий спектр услуг, включая круглосуточный приём стоматолога. В любое время суток вы можете обратиться за консультацией, лечением или экстренной помощью – мы всегда готовы помочь.')}</p>
-                                <a href="#">{t('Подробнее')}<img src="./icons/arrow.png" alt="" /></a>
+                                <a href="https://www.instagram.com/olllayor?igsh=MWcxYjZ2OWw3dm1zcg==">{t('Подробнее')}<img src="./icons/arrow.png" alt="" /></a>
                             </div>
                         </div>
                     </div>
@@ -304,15 +324,15 @@ export function MainPage() {
                         <ul>
                             <li>
                                 <p><img src="icons/tell.png" alt="" /> {t('Звонить по номеру')}:</p>
-                                <a href="#">+998 94 656-85-82</a>
+                                <a href="tel:+998946568582">+998 94 656-85-82</a> 
                             </li>
                             <li>
                                 <p><img src="icons/email.png" alt="" /> {t('Электронная почта')}:</p>
-                                <a href="#">info@iftixordental.uz</a>
+                                <a href="mailto:info@iftixordental.uz">info@iftixordental.uz</a>
                             </li>
                             <li>
                                 <p><img src="icons/clock.png" alt="" /> {t('Время работы')}:</p>
-                                <span> {t('Пн. – Вс')} {t('с 9:00 до 18:00')}</span>
+                                <span>{t('Пн. – Вс')} {t('с 9:00 до 18:00')}</span>
                             </li>
                             <li>
                                 <p><img src="icons/location.png" alt="" /> {t('Наш адрес')}:</p>

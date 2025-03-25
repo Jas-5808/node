@@ -26,7 +26,7 @@ const Header = () =>{
         localStorage.setItem("language", language.code);
     };
 
-    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
         e.preventDefault(); 
         const element = document.getElementById(id);
         if (element) {
