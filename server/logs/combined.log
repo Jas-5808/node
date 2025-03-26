@@ -35,3 +35,14 @@
 {"level":"info","message":"Клик обработан: link=instagram, totalCount=3","timestamp":"2025-03-24T17:11:08.051Z"}
 {"level":"info","message":"База данных инициализирована","timestamp":"2025-03-24T17:12:46.190Z"}
 {"level":"info","message":"Клик обработан: link=facebook, totalCount=2","timestamp":"2025-03-24T17:13:46.585Z"}
+{"level":"info","message":"База данных инициализирована","timestamp":"2025-03-26T02:26:15.690Z"}
+{"level":"info","message":"Запрос на звонок обработан: name=123, phone=+1234567","timestamp":"2025-03-26T02:27:10.267Z"}
+{"level":"info","message":"Запрос на звонок обработан: name=jasur, phone=+998931234567","timestamp":"2025-03-26T02:28:20.176Z"}
+{"level":"info","message":"Запрос на звонок обработан: name=js, phone=245673","timestamp":"2025-03-26T02:28:41.725Z"}
+{"level":"info","message":"Клик обработан: link=instagram, totalCount=1","timestamp":"2025-03-26T02:34:28.852Z"}
+{"level":"info","message":"Запрос на звонок обработан: name=jasurbek, phone=+1236794","timestamp":"2025-03-26T02:35:51.934Z"}
+{"level":"info","message":"Клик обработан: link=facebook, totalCount=1","timestamp":"2025-03-26T02:36:04.647Z"}
+{"level":"info","message":"Клик обработан: link=telegram, totalCount=1","timestamp":"2025-03-26T02:36:09.517Z"}
+{"level":"info","message":"Клик обработан: link=telegram, totalCount=2","timestamp":"2025-03-26T02:36:29.792Z"}
+{"level":"info","message":"Клик обработан: link=facebook, totalCount=2","timestamp":"2025-03-26T02:36:33.677Z"}
+{"level":"info","message":"Клик обработан: link=facebook, totalCount=3","timestamp":"2025-03-26T02:36:39.420Z"}

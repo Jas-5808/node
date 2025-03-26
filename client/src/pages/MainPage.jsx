@@ -224,7 +224,7 @@ export function MainPage() {
                                 <div className={cn.line}></div>
                                 <h3>{t('О нашей клинике')}</h3>
                                 <p>{t('это современный медицинский центр, где каждый пациент получает квалифицированную помощь без выходных. Мы предлагаем широкий спектр услуг, включая круглосуточный приём стоматолога. В любое время суток вы можете обратиться за консультацией, лечением или экстренной помощью – мы всегда готовы помочь.')}</p>
-                                <a href="https://www.instagram.com/olllayor?igsh=MWcxYjZ2OWw3dm1zcg==">{t('Подробнее')}<img src="./icons/arrow.png" alt="" /></a>
+                                <a href="https://www.instagram.com/dr.kamoliddin.uz?igsh=eHcxdGI0cm9ncHRl">{t('Подробнее')}<img src="./icons/arrow.png" alt="" /></a>
                             </div>
                         </div>
                     </div>
