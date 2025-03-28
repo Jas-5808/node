@@ -1,18 +1,10 @@
 import React from "react";
 import cn from "./mainCss.module.scss";
-import { NavLink } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
-import { useState } from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules'; 
-import 'swiper/css'; 
-import 'swiper/css/pagination';
-
 
 const Footer = () => {
     const handleSocialClick = async (link) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/click`, {
+            const response = await fetch(`https://dentalclinic.uz/api/click`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -36,12 +28,12 @@ const Footer = () => {
             <footer className={cn.footer}>
                 <div className="container">
                     <div className={cn.footer_content}>
-                        <h4>Copyright © 2024 Iftixor Dental Clinic</h4>
+                        <h4>Copyright © 2025 Dental Clinic</h4>
 
                         <ul>
                             <li>
                                 <a
-                                    href="https://www.instagram.com/olllayor?igsh=MWcxYjZ2OWw3dm1zcg=="
+                                    href="https://www.instagram.com/dr.kamoliddin.uz?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     onClick={() => handleSocialClick('instagram')}
@@ -61,12 +53,30 @@ const Footer = () => {
                             </li>
                             <li>
                                 <a
-                                    href="https://t.me"
+                                    href="https://t.me/dr_komoliddin"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     onClick={() => handleSocialClick('telegram')}
                                 >
                                     <img src="icons/telegram.png" alt="Telegram" />
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://youtube.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => handleSocialClick('youtube')}
+                                >
+                                    <img src="icons/youtube.png" alt="YouTube" />
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="tel:+998777371118"
+                                    onClick={() => handleSocialClick('phone')}
+                                >
+                                    <img src="icons/phone-icon.png" alt="Позвонить" />
                                 </a>
                             </li>
                         </ul>

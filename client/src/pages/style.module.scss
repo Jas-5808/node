@@ -297,7 +297,7 @@
     
                 .section_text {
                     img{
-                        width: 130px;
+                        width: 200px;
                         margin-bottom: 0;
                     }
                     h3 {
@@ -310,7 +310,7 @@
                     }
     
                     p {
-                        font-size: 14px;
+                        font-size: 20px;
                         max-width: 300px;
                     }
                 }
@@ -442,7 +442,7 @@
     .our_services {
         padding: 70px 0;
         margin-bottom: 50px;
-    
+
         h2 {
             font-size: 45px;
             margin-bottom: 70px;
@@ -450,25 +450,31 @@
             opacity: 0.75;
             text-align: center;
         }
-    
+
         .services_cards {
             position: relative;
-    
+
             .swiper {
-                display: none; 
+                display: none;
                 width: 100%;
-                padding-bottom: 50px; 
-    
+                padding-bottom: 50px;
+
                 .swiper_slide {
                     width: auto;
                     display: flex;
-                    justify-content: center; 
+                    justify-content: center;
                     align-items: center;
+
+                    img {
+                        height: 200px; /* Уменьшаем высоту изображения */
+                        object-fit: cover; /* Сохраняем пропорции */
+                        width: 100%; /* Ширина подстраивается под контейнер */
+                    }
                 }
-    
+
                 .swiper-pagination {
                     bottom: 10px;
-    
+
                     .swiper-pagination-bullet {
                         background: var(--blue);
                         opacity: 0.5;
@@ -477,26 +483,26 @@
                         }
                     }
                 }
-    
+
                 .swiper-button-next,
                 .swiper-button-prev {
                     color: var(--blue);
                     width: 40px;
                     height: 40px;
-    
+
                     &:after {
                         font-size: 20px;
                     }
                 }
             }
-    
+
             .desktop_cards {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 32px;
                 justify-content: center;
             }
-    
+
             .services_card {
                 width: 320px;
                 height: 380px;
@@ -505,38 +511,38 @@
                 gap: 20px;
                 border-radius: 20px;
                 border: 1px solid var(--green);
-    
+
                 .ser_card_text {
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
                     padding: 15px 20px;
-    
+
                     img {
                         width: 72px;
                         height: 72px;
                     }
-    
+
                     h3 {
                         font-size: 24px;
                         font-weight: 700;
                         opacity: 0.75;
                     }
-    
+
                     .line {
                         width: 72px;
                         height: 4px;
                         background: var(--text-blue);
                         border-radius: 4px;
                     }
-    
+
                     p {
                         font-size: 18px;
                         font-weight: 300;
                         opacity: 0.75;
                     }
                 }
-    
+
                 a {
                     margin-top: auto;
                     margin-left: auto;
@@ -547,101 +553,112 @@
                     color: var(--white);
                     transition: all 0.3s;
                     text-decoration: none;
-    
+
                     &:hover {
                         background: var(--blue);
                     }
                 }
             }
         }
-    
 
         @media (max-width: 1024px) {
             .services_cards {
                 .swiper {
-                    display: block; 
+                    display: block;
                 }
-    
+
                 .desktop_cards {
-                    display: none; 
+                    display: none;
                 }
             }
         }
-    
+
         @media (max-width: 768px) {
             padding: 50px 0;
             margin-bottom: 40px;
-    
+
             h2 {
                 font-size: 36px;
                 margin-bottom: 50px;
             }
-    
+
             .services_cards {
                 .services_card {
-                    width: 300px; 
-    
+                    width: 300px;
+
                     .ser_card_text {
                         gap: 15px;
-    
+
                         img {
                             width: 60px;
                             height: 60px;
                         }
-    
+
                         h3 {
                             font-size: 22px;
                         }
-    
+
                         p {
                             font-size: 16px;
                         }
                     }
-    
+
                     a {
                         padding: 14px 28px;
                     }
                 }
+
+                .swiper_slide {
+                    img {
+                        height: 180px; /* Уменьшаем высоту для меньших экранов */
+                    }
+                }
             }
         }
-    
+
         @media (max-width: 425px) {
             padding: 40px 0;
-    
+
             h2 {
                 font-size: 30px;
                 margin-bottom: 40px;
             }
-    
+
             .services_cards {
                 .swiper {
                     padding-left: 0;
                     padding-right: 0;
                 }
-    
+
                 .services_card {
-                    width: 260px; 
-    
+                    width: 260px;
+
                     .ser_card_text {
                         gap: 10px;
                         padding: 10px 15px;
-    
+
                         img {
                             width: 50px;
                             height: 50px;
                         }
-    
+
                         h3 {
                             font-size: 20px;
                         }
-    
+
                         p {
                             font-size: 14px;
                         }
                     }
-    
+
                     a {
                         padding: 12px 24px;
+                    }
+                }
+
+                .swiper_slide {
+                    img {
+                        height: 150px; /* Еще меньше высота для маленьких экранов */
                     }
                 }
             }
@@ -1664,4 +1681,5 @@
             }
         }
     }
+    
 }

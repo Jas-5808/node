@@ -3,8 +3,8 @@ import cn from "./style.module.scss";
 import { useTranslation } from 'react-i18next';
 import { useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules'; 
-import 'swiper/css'; 
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
 import 'swiper/css/pagination';
 import hmImage from '../../public/img/hm.png';
 import aboutImg from '../../public/img/clinic.png';
@@ -19,7 +19,7 @@ export function MainPage() {
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState(null); 
+    const [submitStatus, setSubmitStatus] = useState(null);
 
 
     const services = [
@@ -38,7 +38,7 @@ export function MainPage() {
             name: "Dinara Yusubboeva",
             text: t("Menga juda yoqdi, shifokorlar malakali va ehtiyotkor, tez va professional ishlaydilar. Maslahat uchun rahmat!"),
             rating: 5,
-            photo: "./img/user.jpg", 
+            photo: "./img/user.jpg",
         },
         {
             name: "Мухиддит Рихсибоев",
@@ -59,6 +59,15 @@ export function MainPage() {
             photo: "./img/user.jpg",
         },
     ];
+
+    const slideInfo = [
+        { id: 'slide1', src: './img/dental.jpg' },
+        { id: 'slide2', src: './img/slide2.jpg' },
+        { id: 'slide2', src: './img/slide3.jpg' },
+        { id: 'slide2', src: './img/slide4.jpg' },
+        { id: 'slide2', src: './img/slide5.jpg' },
+
+    ]
 
     const renderStars = (rating) => {
         const stars = [];
@@ -89,8 +98,8 @@ export function MainPage() {
         setSubmitStatus(null);
 
         try {
-            
-            const response = await fetch(`http://localhost:3000/api/call`, {
+
+            const response = await fetch(`https://dentalclinic.uz/api/call`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -123,7 +132,7 @@ export function MainPage() {
         if (element) {
             element.scrollIntoView({ behavior: "smooth" });
         }
-        window.location.href = "tel:+998946568582"; 
+        window.location.href = "tel:+998777371118";
     };
     const handleScroll = (e, id) => {
         e.preventDefault();
@@ -173,8 +182,8 @@ export function MainPage() {
                         <div className={cn.services_cards}>
                             <Swiper
                                 modules={[Navigation, Pagination]}
-                                spaceBetween={15} 
-                                slidesPerView="auto" 
+                                spaceBetween={15}
+                                slidesPerView="auto"
                                 centeredSlides={true}
                                 navigation
                                 pagination={{ clickable: true }}
@@ -209,6 +218,36 @@ export function MainPage() {
                                 ))}
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div id="services" className="container">
+                    <div>
+                        <Swiper
+                            modules={[Navigation, Pagination, Autoplay]}
+                            spaceBetween={32}
+                            slidesPerView={3}
+                            navigation
+                            pagination={{ clickable: true }}
+                            loop={true}
+                            autoplay={{ delay: 3000, disableOnInteraction: false }}
+                            breakpoints={{
+                                320: { slidesPerView: 1 },
+                                768: { slidesPerView: 2 },
+                                1024: { slidesPerView: 3 },
+                                1440: { slidesPerView: 4 },
+                            }}
+                        >
+                            {slideInfo.map((review, index) => (
+                                <SwiperSlide key={index}>
+                                    <div>
+                                        <div className={cn.swiper_slide}>
+                                            <img src={review.src} alt={review.id} style={{ width: '100%', borderRadius: '40px' }} />
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
                     </div>
                 </div>
 
@@ -280,15 +319,15 @@ export function MainPage() {
                         <h2>{t('Отзывы о нас')}</h2>
                         <div className={cn.reviews_content}>
                             <Swiper
-                                modules={[Navigation, Pagination, Autoplay]} 
+                                modules={[Navigation, Pagination, Autoplay]}
                                 spaceBetween={32}
                                 slidesPerView={3}
                                 navigation
                                 pagination={{ clickable: true }}
-                                loop={true} 
+                                loop={true}
                                 autoplay={{
                                     delay: 3000,
-                                    disableOnInteraction: false, 
+                                    disableOnInteraction: false,
                                 }}
                                 breakpoints={{
                                     320: { slidesPerView: 1 },
@@ -327,7 +366,7 @@ export function MainPage() {
                         <ul>
                             <li>
                                 <p><img src="icons/tell.png" alt="" /> {t('Звонить по номеру')}:</p>
-                                <a href="tel:+998946568582">+998 94 656-85-82</a> 
+                                <a href="tel:+998946568582">+998 77 737-11-18</a>
                             </li>
                             <li>
                                 <p><img src="icons/email.png" alt="" /> {t('Электронная почта')}:</p>
@@ -335,11 +374,11 @@ export function MainPage() {
                             </li>
                             <li>
                                 <p><img src="icons/clock.png" alt="" /> {t('Время работы')}:</p>
-                                <span>{t('Пн. – Вс')} {t('с 9:00 до 18:00')}</span>
+                                <span>{t('24/7')}</span>
                             </li>
                             <li>
                                 <p><img src="icons/location.png" alt="" /> {t('Наш адрес')}:</p>
-                                <span>{t('г. Ташкент, Яккасаройский р-н, ул. Бобура, 87Б/1')}</span>
+                                <span>{t('г. Ташкент, Юнусабадский р-н, 9-квартал,')} <br /> {t('Учкахрамон 21A')}</span>
                             </li>
                         </ul>
                     </div>
