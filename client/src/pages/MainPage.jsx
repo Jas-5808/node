@@ -23,14 +23,14 @@ export function MainPage() {
 
 
     const services = [
-        { title: t('Лечение зубов'), desc: t('Качественное и безболезненное решение для здоровья полости рта'), img: "./icons/oral-health.png" },
-        { title: t('Имплантация зубов'), desc: t('Восстановите улыбку с помощью современных технологий'), img: "./icons/teeth.png" },
-        { title: t('Виниры'), desc: t('Виниры – это эффективное решение для красивой и ровной улыбки.'), img: "./icons/dental-veneer.png" },
+        { title: t('Лечение зубов'), desc: t('Качественное и безболезненное решение для здоровья полости рта'), img: "./icons/dental_treatment.png" },
+        { title: t('Имплантация зубов'), desc: t('Восстановите улыбку с помощью современных технологий'), img: "./icons/dental_implantation.png" },
+        { title: t('Виниры'), desc: t('Виниры – это эффективное решение для красивой и ровной улыбки.'), img: "./icons/veneer.png" },
         { title: t('Реставрация зубов'), desc: t('Возвращение красоты и функциональности улыбки'), img: "./icons/teeth-restoration.png" },
-        { title: t('Детская стоматология'), desc: t('Лечение зубов ребенка с самого раннего возраста'), img: "./icons/baby-teeth.png" },
-        { title: t('Отбеливание зубов'), desc: t('Процедура улучшения цвета зубов и устранения изменений цвета'), img: "./icons/tooth-whitening.png" },
+        { title: t('Детская стоматология'), desc: t('Лечение зубов ребенка с самого раннего возраста'), img: "./icons/baby-dental.png" },
+        { title: t('Отбеливание зубов'), desc: t('Процедура улучшения цвета зубов и устранения изменений цвета'), img: "./icons/whitening.png" },
         { title: t('Коронки'), desc: t('Восстановления поврежденных зубов и улучшения их внешнего вида.'), img: "./icons/dental-crown.png" },
-        { title: t('Ортодонтия'), desc: t('Восстановление зубов, придание им естественного вида и прочности.'), img: "./icons/braces.png" },
+        { title: t('Ортодонтия'), desc: t('Восстановление зубов, придание им естественного вида и прочности.'), img: "./icons/brace.png" },
     ];
 
     const reviewsData = [
@@ -150,7 +150,7 @@ export function MainPage() {
                         <div className={cn.bg_color2}></div>
                         <div className={cn.section_title}>
                             <div className={cn.section_text}>
-                                <img src="./img/Dentalclinic.png" alt="logo" />
+                                {/* <img src="./img/Dentalclinic.png" alt="logo" /> */}
                                 <h1>{t('Стоматологическая')}</h1>
                                 <h3>{t('КЛИНИКА')} 24/7</h3>
                                 <p>{t('Полный спектр стоматологических услуг: профилактика, лечение, имплантация. Современные технологии и индивидуальный подход.')}</p>
@@ -282,7 +282,14 @@ export function MainPage() {
                                         value={formData.name}
                                         onChange={handleInputChange}
                                         required
-
+                                    />
+                                    <input
+                                        type="text"
+                                        name="city"
+                                        placeholder={t("Город")}
+                                        value={formData.city}
+                                        onChange={handleInputChange}
+                                        required
                                     />
                                     <input
                                         type="tel"
@@ -303,6 +310,7 @@ export function MainPage() {
                                     <p style={{ color: 'red' }}>{t('Ошибка при отправке заявки.')}</p>
                                 )}
                             </div>
+
                             <div className={cn.signUp_img}>
                                 <div className={cn.bg_color4}></div>
                                 <div className={cn.s_img}>

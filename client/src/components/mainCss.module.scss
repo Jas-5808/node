@@ -312,6 +312,9 @@
             display: none; 
         }
     }
+    @media(max-width: 480px){
+        margin-bottom: 45px;
+    }
 }
 
 .footer{
