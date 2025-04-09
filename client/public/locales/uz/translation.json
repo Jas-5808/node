@@ -19,29 +19,21 @@
     
     "Наши услуги": "Bizning xizmatlarimiz",
     "Лечение зубов": "Tishlarni davolash",
-    "Качественное и безболезненное решение для здоровья полости рта": 
-    "Og‘iz bo‘shlig‘ining sog‘lig‘i uchun sifatli va og‘riqsiz yechim",
+    "Безболезненное и эффективное восстановление здоровья зубов и десен.": "Og‘riqsiz va samarali tarzda tish va milk salomatligini tiklash.",
     "Имплантация зубов": "Tish implantatsiyasi",
-    "Восстановите улыбку с помощью современных технологий": 
-    "Zamonaviy texnologiyalar yordamida tabassumingizni tiklang",
+    "Современное решение для восстановления утраченных зубов": "Yo‘qolgan tishlarni tiklash uchun zamonaviy yechim",
     "Виниры": "Vinirlar",
-    "Виниры – это эффективное решение для красивой и ровной улыбки.": 
-    "Vinirlar – bu chiroyli va tekis tabassum uchun samarali yechim.",
+    "Эстетичное решение для красивой и ровной улыбки": "Chiroyli va tekis tabassum uchun estetik yechim",
     "Реставрация зубов": "Tishlarni restavratsiya qilish",
-    "Возвращение красоты и функциональности улыбки": 
-    "Tabassumning go‘zalligi va funksionalligini qaytarish",
+    "Восстановление формы и функции повреждённых зубов": "Shikastlangan tishlarning shakli va funksiyasini tiklash",
     "Детская стоматология": "Bolalar stomatologiyasi",
-    "Лечение зубов ребенка с самого раннего возраста": 
-    "Bolalarning tishlarini eng yoshligidan davolash",
+    "Мягкий и заботливый подход к лечению детских зубов": "Bolalar tishlarini davolashda yumshoq va e’tiborli yondashuv",
     "Отбеливание зубов": "Tishlarni oqartirish",
-    "Процедура улучшения цвета зубов и устранения изменений цвета": 
-    "Tishlar rangini yaxshilash va rang o‘zgarishlarini bartaraf etish jarayoni",
+    "Эффективное осветление зубов и удаление потемнений": "Tishlarni samarali oqartirish va dog‘larni yo‘qotish",
     "Коронки": "Koronkalarni qo‘yish",
-    "Восстановления поврежденных зубов и улучшения их внешнего вида.": 
-    "Buzilgan tishlarni tiklash va ularning tashqi ko‘rinishini yaxshilash.",
+    "Надёжная защита и восстановление сильно повреждённых зубов": "Katta darajada shikastlangan tishlarni ishonchli himoya va tiklash",
     "Ортодонтия": "Ortodontiya",
-    "Восстановление зубов, придание им естественного вида и прочности.": 
-    "Tishlarni tiklash, ularga tabiiy ko‘rinish va mustahkamlik berish.",
+    "Коррекция прикуса и выравнивание зубов для идеальной улыбки": "Mukammal tabassum uchun tishlarni to‘g‘rilash va tishlar o‘rnini tuzatish",
     "ЗАПИСАТЬСЯ": "RO'YXATDAN O'TISH",
     
     "О нашей клинике": "Bizning klinikamiz haqida",
@@ -74,5 +66,7 @@
 
     "Где мы находимся": "Qayrdamiz",
 
-    "Отзывы о нас": "Biz haqimizda sharhlar"
+    "Отзывы о нас": "Biz haqimizda sharhlar",
+
+    "Это современный медицинский центр, где каждый пациент получает квалифицированную помощь без выходных. Мы предлагаем широкий спектр услуг, включая круглосуточный приём стоматолога. В любое время суток вы можете обратиться за консультацией, лечением или экстренной помощью – мы всегда готовы помочь.": "Bu zamonaviy tibbiyot markazi bo‘lib, har bir bemor haftaning har kuni malakali yordam oladi. Biz xizmatlarimizning keng doirasini taklif qilamiz, jumladan, stomatologning tun-u kun qabulini ham. Sutkaning istalgan vaqtida maslahat, davolanish yoki shoshilinch yordam uchun murojaat qilishingiz mumkin — biz har doim yordam berishga tayyormiz."
 }

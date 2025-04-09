@@ -23,14 +23,15 @@ export function MainPage() {
 
 
     const services = [
-        { title: t('Лечение зубов'), desc: t('Качественное и безболезненное решение для здоровья полости рта'), img: "./icons/dental_treatment.png" },
-        { title: t('Имплантация зубов'), desc: t('Восстановите улыбку с помощью современных технологий'), img: "./icons/dental_implantation.png" },
-        { title: t('Виниры'), desc: t('Виниры – это эффективное решение для красивой и ровной улыбки.'), img: "./icons/veneer.png" },
-        { title: t('Реставрация зубов'), desc: t('Возвращение красоты и функциональности улыбки'), img: "./icons/teeth-restoration.png" },
-        { title: t('Детская стоматология'), desc: t('Лечение зубов ребенка с самого раннего возраста'), img: "./icons/baby-dental.png" },
-        { title: t('Отбеливание зубов'), desc: t('Процедура улучшения цвета зубов и устранения изменений цвета'), img: "./icons/whitening.png" },
-        { title: t('Коронки'), desc: t('Восстановления поврежденных зубов и улучшения их внешнего вида.'), img: "./icons/dental-crown.png" },
-        { title: t('Ортодонтия'), desc: t('Восстановление зубов, придание им естественного вида и прочности.'), img: "./icons/brace.png" },
+        { title: t('Лечение зубов'), desc: t('Безболезненное и эффективное восстановление здоровья зубов и десен.'), img: "./icons/dental_treatment.png" },
+        { title: t('Имплантация зубов'), desc: t('Современное решение для восстановления утраченных зубов'), img: "./icons/dental_implantation.png" },
+        { title: t('Виниры'), desc: t('Эстетичное решение для красивой и ровной улыбки'), img: "./icons/veneer.png" },
+        { title: t('Реставрация зубов'), desc: t('Восстановление формы и функции повреждённых зубов'), img: "./icons/teeth-restoration.png" },
+        { title: t('Детская стоматология'), desc: t('Мягкий и заботливый подход к лечению детских зубов'), img: "./icons/baby-dental.png" },
+        { title: t('Отбеливание зубов'), desc: t('Эффективное осветление зубов и удаление потемнений'), img: "./icons/whitening.png" },
+        { title: t('Коронки'), desc: t('Надёжная защита и восстановление сильно повреждённых зубов'), img: "./icons/crown.png" },
+        { title: t('Ортодонтия'), desc: t('Коррекция прикуса и выравнивание зубов для идеальной улыбки'), img: "./icons/brace.png" },
+        
     ];
 
     const reviewsData = [
@@ -156,20 +157,16 @@ export function MainPage() {
                                 <p>{t('Полный спектр стоматологических услуг: профилактика, лечение, имплантация. Современные технологии и индивидуальный подход.')}</p>
                             </div>
                             <div className={cn.section_link}>
-                                <span>
-                                    <img src="./icons/tell.png" alt="" />
                                     <button>
+                                        <img src="./icons/tell.png" alt="" />
                                         <a href="#" onClick={(e) => handleCallAndScroll(e, "contacts")}>
                                             {t('Звонить по номеру')}
                                         </a>
                                     </button>
-                                </span>
-                                <span>
-                                    <img src="./icons/location.png" alt="" />
                                     <button>
+                                        <img src="./icons/location.png" alt="" />
                                         <a href="https://goo.su/amJPUi">{t('Где мы находимся')}</a>
                                     </button>
-                                </span>
                             </div>
                         </div>
                         <div className={cn.section_img} style={{ backgroundImage: `url(${hmImage})` }}></div>
@@ -262,7 +259,7 @@ export function MainPage() {
                             <div className={cn.aboutUs_title}>
                                 <div className={cn.line}></div>
                                 <h3>{t('О нашей клинике')}</h3>
-                                <p>{t('это современный медицинский центр, где каждый пациент получает квалифицированную помощь без выходных. Мы предлагаем широкий спектр услуг, включая круглосуточный приём стоматолога. В любое время суток вы можете обратиться за консультацией, лечением или экстренной помощью – мы всегда готовы помочь.')}</p>
+                                <p>{t('Это современный медицинский центр, где каждый пациент получает квалифицированную помощь без выходных. Мы предлагаем широкий спектр услуг, включая круглосуточный приём стоматолога. В любое время суток вы можете обратиться за консультацией, лечением или экстренной помощью – мы всегда готовы помочь.')}</p>
                                 <a href="https://www.instagram.com/dr.kamoliddin.uz?igsh=eHcxdGI0cm9ncHRl">{t('Подробнее')}<img src="./icons/arrow.png" alt="" /></a>
                             </div>
                         </div>
@@ -378,7 +375,7 @@ export function MainPage() {
                             </li>
                             <li>
                                 <p><img src="icons/email.png" alt="" /> {t('Электронная почта')}:</p>
-                                <a href="mailto:info@iftixordental.uz">info@iftixordental.uz</a>
+                                <a href="mailto:info@iftixordental.uz">komol0909@icloud.com</a>
                             </li>
                             <li>
                                 <p><img src="icons/clock.png" alt="" /> {t('Время работы')}:</p>

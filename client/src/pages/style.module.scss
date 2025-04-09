@@ -67,25 +67,20 @@
     
             .section_link {
                 display: flex;
-                flex-direction: column;
                 gap: 15px;
-    
-                span {
-                    display: flex;
-                    align-items: center;
-                    gap: 20px;
-                    font-size: 28px;
-                    color: var(--blue);
-    
-                    img {
-                        width: 30px;
-                    }
 
                     button{
-                        width: 150px;
                         background: #1a2343;
                         padding: 10px 20px;
                         border-radius: 20px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        img {
+                            width: 25px;
+                            height: 25px;
+                        }
                         a{
                             width: 100%;
                            
@@ -94,7 +89,6 @@
 
                         }
                     }
-                }
             }
         }
     
@@ -168,18 +162,7 @@
                         font-size: 17px;
                     }
                 }
-    
-                .section_link {
-                    span {
-                        width: 400px;
-                        font-size: 24px;
-                    
-    
-                        img {
-                            width: 28px;
-                        }
-                    }
-                }
+
             }
     
             .section_img {
@@ -253,21 +236,6 @@
                     }
                 }
     
-                .section_link {
-                    align-items: center;
-                    gap: 30px;
-    
-                    span {
-                        width: 100%;
-                        max-width: 300px;
-                        font-size: 20px;
-                        gap: 15px;
-    
-                        img {
-                            width: 24px;
-                        }
-                    }
-                }
             }
     
             .section_img {
@@ -283,7 +251,7 @@
             }
     
             .bg_color {
-                top: -300px;
+                top: -280px;
                 right: -50px;
             }
     
@@ -317,11 +285,15 @@
                 }
     
                 .section_link {
-                    span {
-                        font-size: 18px;
-    
-                        img {
+                    gap: 10px;
+                    
+                    button{
+                        gap: 7px;
+                        padding: 10px 15px;
+
+                        img{
                             width: 20px;
+                            height: 20px;
                         }
                     }
                 }
@@ -1245,27 +1217,28 @@
                 }
     
                 .signUp_img {
-                    .bg_color4 {
-                        width: 300px;
-                        height: 150px;
-                        top: 0;
-                        right: -100px;
-                    }
+                    display: none;
+                    // .bg_color4 {
+                    //     width: 300px;
+                    //     height: 150px;
+                    //     top: 0;
+                    //     right: -100px;
+                    // }
                 
-                    .s_img {
-                        width: 220px;
-                        height: 220px;
-                        gap: 10px;
+                    // .s_img {
+                    //     width: 220px;
+                    //     height: 220px;
+                    //     gap: 10px;
                 
-                        img {
-                            width: 50px;
-                        }
+                    //     img {
+                    //         width: 50px;
+                    //     }
                 
-                        h3 {
-                            width: 80px;
-                            font-size: 20px;
-                        }
-                    }
+                    //     h3 {
+                    //         width: 80px;
+                    //         font-size: 20px;
+                    //     }
+                    // }
                 }
             }
         }

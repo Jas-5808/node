@@ -40,14 +40,7 @@ const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
                     <div className={cn.header_content}>
                         <div className={cn.h_content}>
                             <div className={cn.logo}>
-                                <div
-                                    className={`${cn.burger} ${isMenuOpen ? cn.active : ''}`}
-                                    onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                >
-                                    <span></span>
-                                </div>
                                 <img src="./img/Dentalclinic.png" alt="logo" />
-                            
                             </div>
                             <ul className={`${cn.list} ${isMenuOpen ? cn.active : ''}`}>
                                 <li><a href="#home" onClick={(e) => handleScroll(e, "home")}>{t('Главная')}</a></li>
@@ -79,6 +72,12 @@ const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
                             <a href="#bids" onClick={(e) => handleScroll(e, "bids")}>
                                 <button>{t('Оставить заявку')}</button>
                             </a>
+                            <div
+                                className={`${cn.burger} ${isMenuOpen ? cn.active : ''}`}
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            >
+                                <span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
