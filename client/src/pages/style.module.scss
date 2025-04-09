@@ -69,24 +69,19 @@
                 display: flex;
                 gap: 15px;
 
-                    button{
+                    a{
                         background: #1a2343;
                         padding: 10px 20px;
                         border-radius: 20px;
                         display: flex;
                         align-items: center;
                         gap: 10px;
+                        color: var(--white);
+
 
                         img {
                             width: 25px;
                             height: 25px;
-                        }
-                        a{
-                            width: 100%;
-                           
-                            color: var(--white);
-                            
-
                         }
                     }
             }
@@ -287,7 +282,7 @@
                 .section_link {
                     gap: 10px;
                     
-                    button{
+                    a{
                         gap: 7px;
                         padding: 10px 15px;
 

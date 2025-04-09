@@ -157,16 +157,15 @@ export function MainPage() {
                                 <p>{t('Полный спектр стоматологических услуг: профилактика, лечение, имплантация. Современные технологии и индивидуальный подход.')}</p>
                             </div>
                             <div className={cn.section_link}>
-                                    <button>
-                                        <img src="./icons/tell.png" alt="" />
-                                        <a href="#" onClick={(e) => handleCallAndScroll(e, "contacts")}>
-                                            {t('Звонить по номеру')}
-                                        </a>
-                                    </button>
-                                    <button>
-                                        <img src="./icons/location.png" alt="" />
-                                        <a href="https://goo.su/amJPUi">{t('Где мы находимся')}</a>
-                                    </button>
+                                <a href="#" onClick={(e) => handleCallAndScroll(e, "contacts")}>
+                                    <img src="./icons/tell.png" alt="" />
+                                    {t('Звонить по номеру')}
+                                </a>
+                            
+                                <a href="https://goo.su/amJPUi">
+                                    <img src="./icons/location.png" alt="" />
+                                    {t('Где мы находимся')}
+                                </a> 
                             </div>
                         </div>
                         <div className={cn.section_img} style={{ backgroundImage: `url(${hmImage})` }}></div>
