@@ -159,12 +159,12 @@ export function MainPage() {
                             <div className={cn.section_link}>
                                 <a href="#" onClick={(e) => handleCallAndScroll(e, "contacts")}>
                                     <img src="./icons/tell.png" alt="" />
-                                    {t('Звонить по номеру')}
+                                    {t('Позвонить')}
                                 </a>
                             
                                 <a href="https://goo.su/amJPUi">
                                     <img src="./icons/location.png" alt="" />
-                                    {t('Где мы находимся')}
+                                    {t('Локация')}
                                 </a> 
                             </div>
                         </div>
