@@ -269,6 +269,7 @@ export function MainPage() {
                     <div className="container">
                         <div className={cn.signUp_content}>
                             <div className={cn.signUp_title}>
+                                <p>{t("Услуги женского врача только по записи")}</p>
                                 <h3>{t('Заявка')}</h3>
                                 <form onSubmit={handleSubmit}>
                                     <input

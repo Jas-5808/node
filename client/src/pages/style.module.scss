@@ -961,9 +961,18 @@
                 border-radius: 15px;
                 box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
                 border: 1px solid var(--green);
+
+                p{
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: var(--green);
+                    padding-bottom: 12px;
+                    margin-bottom: 10px;
+                    border-bottom: 2px solid var(--green);
+                }
     
                 h3 {
-                    font-size: 28px;
+                    font-size: 32px;
                     font-weight: 700;
                     color: var(--green);
                     margin-bottom: 20px;
@@ -1191,9 +1200,12 @@
     
                 .signUp_title {
                     padding: 15px;
+                    p{
+                        font-size: 16px;
+                    }
     
                     h3 {
-                        font-size: 20px;
+                        font-size: 22px;
                     }
     
                     form {
