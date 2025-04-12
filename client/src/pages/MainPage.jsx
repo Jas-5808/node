@@ -227,7 +227,7 @@ export function MainPage() {
                             spaceBetween={32}
                             slidesPerView={3}
                             navigation
-                            pagination={{ clickable: true }}
+                            // pagination={{ clickable: true }}
                             loop={true}
                             autoplay={{ delay: 3000, disableOnInteraction: false }}
                             breakpoints={{

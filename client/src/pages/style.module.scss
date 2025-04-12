@@ -409,7 +409,7 @@
 
     .our_services {
         padding: 70px 0;
-        margin-bottom: 50px;
+        margin-bottom:100px;
 
         h2 {
             font-size: 45px;
@@ -635,6 +635,7 @@
 
     .aboutUs {
         position: relative;
+        margin-top: 100px;
         margin-bottom: 290px;
     
         .bg_color3 {
@@ -883,6 +884,7 @@
         }
     
         @media (max-width: 480px) {
+            margin-top: 60px;
             margin-bottom: 100px;
     
             .bg_color3 {
