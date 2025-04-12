@@ -153,7 +153,7 @@ export function MainPage() {
                             <div className={cn.section_text}>
                                 {/* <img src="./img/Dentalclinic.png" alt="logo" /> */}
                                 <h1>{t('Стоматологическая')}</h1>
-                                <h3>{t('КЛИНИКА')} 24/7</h3>
+                                <h3 style={{ fontWeight: 'bold' }}>{t('КЛИНИКА')} 24/7</h3>
                                 <p>{t('Полный спектр стоматологических услуг: профилактика, лечение, имплантация. Современные технологии и индивидуальный подход.')}</p>
                             </div>
                             <div className={cn.section_link}>
@@ -214,6 +214,7 @@ export function MainPage() {
                                 ))}
                             </div>
                         </div>
+                        <h2 style={{ marginTop: '50px', marginBottom: '0px' }}>{t('Услуги женского врача только по записи')}</h2>
                     </div>
                 </div>
 
@@ -269,7 +270,7 @@ export function MainPage() {
                     <div className="container">
                         <div className={cn.signUp_content}>
                             <div className={cn.signUp_title}>
-                                <p>{t("Услуги женского врача только по записи")}</p>
+                                
                                 <h3>{t('Заявка')}</h3>
                                 <form onSubmit={handleSubmit}>
                                     <input
