@@ -62,3 +62,4 @@
 {"level":"info","message":"База данных инициализирована","timestamp":"2025-04-12T04:52:25.120Z"}
 {"body":{"city":"ташкент","name":"tema-2","phone":"+998935446065"},"level":"error","message":"column \"city\" of relation \"call_requests\" does not exist","method":"POST","stack":"error: column \"city\" of relation \"call_requests\" does not exist\n    at /app/node_modules/pg-pool/index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async addCallRequest (/app/src/services/dbService.js:98:5)\n    at async processCallRequest (/app/src/services/callService.js:4:5)\n    at async /app/src/routes/callRoutes.js:30:13","timestamp":"2025-04-12T04:56:27.257Z","url":"/api/call"}
 {"level":"info","message":"Запрос на звонок обработан: name=tema-2, phone=+998935446065","timestamp":"2025-04-12T05:12:55.011Z"}
+{"level":"info","message":"База данных инициализирована","timestamp":"2025-04-12T05:29:44.806Z"}
