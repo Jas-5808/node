@@ -1,3 +1,4 @@
+// dbService.js
 const { Pool } = require('pg');
 const { dbConfig } = require('../utils/config');
 const logger = require('../utils/logger');
@@ -24,6 +25,22 @@ const initDb = async () => {
                     requested_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 );
             `);
+
+            // Проверяем, существует ли столбец city, и добавляем его, если нет
+            const columnCheck = await pool.query(`
+                SELECT column_name 
+                FROM information_schema.columns 
+                WHERE table_name = 'call_requests' AND column_name = 'city';
+            `);
+
+            if (columnCheck.rows.length === 0) {
+                await pool.query(`
+                    ALTER TABLE call_requests
+                    ADD COLUMN city VARCHAR(255) NOT NULL;
+                `);
+                logger.info('Столбец city добавлен в таблицу call_requests');
+            }
+
             await pool.query(`
                 DO $$
                 BEGIN
@@ -51,7 +68,7 @@ const initDb = async () => {
     }
 };
 
-// Методы для работы с кликами
+// Остальные методы без изменений
 const addClick = async (link) => {
     await pool.query('INSERT INTO clicks (link) VALUES ($1)', [link]);
 };
@@ -92,9 +109,8 @@ const getStats = async (period) => {
     return result.rows;
 };
 
-// Методы для работы с запросами на звонки
-const addCallRequest = async (name, phone) => {
-    await pool.query('INSERT INTO call_requests (name, phone) VALUES ($1, $2)', [name, phone]);
+const addCallRequest = async (name, phone, city) => {
+    await pool.query('INSERT INTO call_requests (name, phone, city) VALUES ($1, $2, $3)', [name, phone, city]);
 };
 
 module.exports = { initDb, addClick, getStats, addCallRequest, getTotalClicks };

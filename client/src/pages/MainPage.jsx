@@ -16,6 +16,7 @@ export function MainPage() {
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
+        сity: '',
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -108,6 +109,7 @@ export function MainPage() {
                 body: JSON.stringify({
                     name: formData.name,
                     phone: formData.phone,
+                    city: formData.city,
                 }),
             });
 
@@ -287,7 +289,7 @@ export function MainPage() {
                                         placeholder={t("Город")}
                                         value={formData.city}
                                         onChange={handleInputChange}
-                                        required
+                                        
                                     />
                                     <input
                                         type="tel"

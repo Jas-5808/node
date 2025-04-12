@@ -24,10 +24,10 @@ router.post(
             return res.status(400).json({ errors: errors.array() });
         }
 
-        const { name, phone } = req.body;
-
+        const { name, phone, city } = req.body;
+       
         try {
-            await processCallRequest(name, phone, bot, callAdminId);
+            await processCallRequest(name, phone, city, bot, callAdminId);
             logger.info(`Запрос на звонок обработан: name=${name}, phone=${phone}`);
             res.json({ success: true, data: { name, phone } });
         } catch (err) {
