@@ -19,8 +19,21 @@
     
     "Наши услуги": "Bizning xizmatlarimiz",
     "Лечение зубов": "Tishlarni davolash",
-    "Качественное и безболезненное решение для здоровья полости рта": 
-    "Og‘iz bo‘shlig‘ining sog‘lig‘i uchun sifatli va og‘riqsiz yechim",
+    "Безболезненное и эффективное восстановление здоровья зубов и десен.": "Og‘riqsiz va samarali tarzda tish va milk salomatligini tiklash.",
+    "Имплантация зубов": "Tish implantatsiyasi",
+    "Современное решение для восстановления утраченных зубов": "Yo‘qolgan tishlarni tiklash uchun zamonaviy yechim",
+    "Виниры": "Vinirlar",
+    "Эстетичное решение для красивой и ровной улыбки": "Chiroyli va tekis tabassum uchun estetik yechim",
+    "Реставрация зубов": "Tishlarni restavratsiya qilish",
+    "Восстановление формы и функции повреждённых зубов": "Shikastlangan tishlarning shakli va funksiyasini tiklash",
+    "Детская стоматология": "Bolalar stomatologiyasi",
+    "Мягкий и заботливый подход к лечению детских зубов": "Bolalar tishlarini davolashda yumshoq va e’tiborli yondashuv",
+    "Отбеливание зубов": "Tishlarni oqartirish",
+    "Эффективное осветление зубов и удаление потемнений": "Tishlarni samarali oqartirish va dog‘larni yo‘qotish",
+    "Коронки": "Koronkalarni qo‘yish",
+    "Надёжная защита и восстановление сильно повреждённых зубов": "Katta darajada shikastlangan tishlarni ishonchli himoya va tiklash",
+    "Ортодонтия": "Ortodontiya",
+    "Коррекция прикуса и выравнивание зубов для идеальной улыбки": "Mukammal tabassum uchun tishlarni to‘g‘rilash va tishlar o‘rnini tuzatish",
     "ЗАПИСАТЬСЯ": "RO'YXATDAN O'TISH",
     
     "О нашей клинике": "Bizning klinikamiz haqida",
@@ -29,12 +42,13 @@
     
     "Подробнее": "Batafsil",
     
-    "Заявка": "Ariza",
+    "Заявка": "Biz siz bilan bog’lanamiz",
     "Отправить": "Yuborish",
     "Запишитесь сейчас": "Hozir ro‘yxatdan o‘ting",
     
     "Ваше имя": "Ismingiz",
     "Ваш телефон": "Telefoningiz",
+    "Город": "Shahar",
     
     "Звонить по номеру": "Quyidagi raqamga qo‘ng‘iroq qiling",
     "Электронная почта": "Elektron pochta",
@@ -44,5 +58,17 @@
     "с 9:00 до 18:00": "9:00 dan 18:00 gacha",
     
     "Наш адрес:": "Manzilimiz:",
-    "г. Ташкент, Яккасаройский р-н, ул. Бобура, 87Б/1": "Toshkent sh., Yakkasaroy tumani, Bobur ko‘chasi, 87B/1"
+    "г. Ташкент, Яккасаройский р-н, ул. Бобура, 87Б/1": "Toshkent sh., Yakkasaroy tumani, Bobur ko‘chasi, 87B/1",
+
+    "Телефон номер": "Telefon raqami",
+
+    "Звонить по номеру": "Qo‘ng‘iroq qiling",
+
+    "Где мы находимся": "Qayrdamiz",
+
+    "Отзывы о нас": "Biz haqimizda sharhlar",
+
+    "Услуги женского врача только по записи": "Ayol stomatolog faqat oldindan yozilish orqali xizmat ko’rsatadi",
+
+    "Это современный медицинский центр, где каждый пациент получает квалифицированную помощь без выходных. Мы предлагаем широкий спектр услуг, включая круглосуточный приём стоматолога. В любое время суток вы можете обратиться за консультацией, лечением или экстренной помощью – мы всегда готовы помочь.": "Bu zamonaviy tibbiyot markazi bo‘lib, har bir bemor haftaning har kuni malakali yordam oladi. Biz xizmatlarimizning keng doirasini taklif qilamiz, jumladan, stomatologning tun-u kun qabulini ham. Sutkaning istalgan vaqtida maslahat, davolanish yoki shoshilinch yordam uchun murojaat qilishingiz mumkin — biz har doim yordam berishga tayyormiz."
 }
